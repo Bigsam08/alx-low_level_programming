@@ -1,16 +1,23 @@
 #include "main.h"
 
 /**
- * main - check the code
- *
- * Return: Always 0.
+ * print_diagonal -> printing line
+ * @n: integer params
  */
-
-int main(void)
+void print_diagonal(int n)
 {
-	print_diagonal(0);
-	print_diagonal(2);
-	print_diagonal(10);
-	print_diagonal(-4);
-	return (0);
+	int x, i;
+
+	if (n <= 0)
+		_putchar('\n');
+	else
+	{
+		for (x = 0; x < n; x++)
+		{
+			for (i = 0; i < x; i++)
+				_putchar(' ');
+			_putchar(92);
+			_putchar('\n');
+		}
+	}
 }
