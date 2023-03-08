@@ -32,3 +32,10 @@ mandatory
 Write a function that returns the value of x raised to the power of y.
 
 Prototype: int _pow_recursion(int x, int y);
+
+
+5. Your subconscious is looking for the dreamer
+mandatory
+Write a function that returns the natural square root of a number.
+
+Prototype: int _sqrt_recursion(int n);
