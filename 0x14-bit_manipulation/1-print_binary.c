@@ -6,13 +6,20 @@
 
 void print_binary(unsigned long int n)
 {
-	if (n == 0 && (n >> 1) == 0)
-	{
-		_putchar('0');
-		return;
-	}
+	unsigned long int first;
+	int read, lp;
 
-	if (n >> 1 != 0)
-		print_binary(n >> 1);
-	_putchar((n & 1) + '0');
+	for (lp = 63; lp >= 0; lp--)
+	{
+		first = n >> lp;
+		if (first & 1)
+		{
+			_putchar('1');
+			read++;
+		}
+		else if (!read)
+			_putchar('0');
+	}
+	if (read)
+		_putchar('0');
 }
