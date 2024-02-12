@@ -1,4 +1,5 @@
 #include "main.h"
+#include <string.h>
 
 /**
  * create_file - Creates a file.
@@ -20,7 +21,7 @@ int create_file(const char *filename, char *text_content)
 	lenght = strlen(text_content);
 	if (text_content != NULL)
 	wr = write(pt, text_content, lenght);
-	if (wr != lenght)
+	if (wr == -1)
 		return (-1);
 	close(pt);
 	return (1);
