@@ -6,7 +6,7 @@
  * read_textfile- Reads text file to  print to STDOUT
  * @filename: name of file
  * @letters: number of letters to be read and print
- * Return: (rd) actual number of letters  read and printed
+ * Return: (wr) actual number of letters  read and printed
  * 0 when function fails or filename is NULL.
  */
 ssize_t read_textfile(const char *filename, size_t letters)
@@ -27,5 +27,5 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	close(pt);
 	free(buffer);
-	return (rd);
+	return (wr);
 }
