@@ -15,8 +15,8 @@
 
 int main(int argc, char *argv[])
 {
-	const char *filefrom = argv[1];
-	const char *fileto = argv[2];
+	const char *file_from = argv[1];
+	const char *file_to = argv[2];
 	int pt, wr, pt2, closePT;
 	char buffer[1024];
 	ssize_t rd;
@@ -26,23 +26,23 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "%s", "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	pt = open(filefrom, O_RDONLY);
+	pt = open(file_from, O_RDONLY);
 	if (pt == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filefrom);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 		exit(98);
 	}
-	pt2 = open(fileto, O_WRONLY | O_TRUNC | O_CREAT, 0664);
+	pt2 = open(file_to, O_WRONLY | O_TRUNC | O_CREAT, 0664);
 	if (pt2 == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", fileto);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_to);
 		exit(99);
 	}
 	while ((rd = read(pt, buffer, 1024)) > 0)
 	{
 		if (rd == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filefrom);
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 			exit(98);
 		}
 		buffer[1024] = '\0';
@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
 		wr = write(pt2, buffer, rd);
 		if (wr == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", fileto);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 			exit(99);
 		}
 	}
