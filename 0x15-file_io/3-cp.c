@@ -56,6 +56,7 @@ int main(int argc, char *argv[])
 			exit(99);
 		}
 	}
+	pt2 = open(file_to, O_WRONLY | O_APPEND);
 	closePT = close(pt);
 	if (closePT == -1)
 	{
