@@ -1,9 +1,10 @@
-#include<stdio.h>
+#include <stdio.h>
 #include "main.h"
 #include <stdlib.h>
 #include <unistd.h>
 #include <sys/types.h>
 #include <fcntl.h>
+#include <sys/stat.h>
 
 /**
  * main - writes a program that copies one file to another
@@ -44,6 +45,7 @@ int main(int argc, *argv[])
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filefrom);
 			exit(98);
 		}
+		buffer[1024] = '\0';
 	}
 	if (rd != 0)
 	{
