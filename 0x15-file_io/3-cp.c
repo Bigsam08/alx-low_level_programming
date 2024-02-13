@@ -13,11 +13,11 @@
  * Return: 0 Always as success
  **/
 
-int main(int argc, *argv[])
+int main(int argc, char *argv[])
 {
 	const char *filefrom = argv[1];
 	const char *fileto = argv[2];
-	int ptr, wr, rd, pt2, closePT;
+	int pt, wr, pt2, closePT;
 	char buffer[1024];
 	ssize_t rd;
 
@@ -32,7 +32,7 @@ int main(int argc, *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filefrom);
 		exit(98);
 	}
-	pt2 = = open(fileto, O_WRONLY | O_TRUNC | O_CREAT, 0664);
+	pt2 = open(fileto, O_WRONLY | O_TRUNC | O_CREAT, 0664);
 	if (pt2 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", fileto);
