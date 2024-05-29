@@ -25,6 +25,7 @@ def island_perimeter(grid):
     perimeter = size * 4 - edges * 2
     return perimeter
 
+
 if __name__ == "__main__":
     grid = [
         [0, 0, 0, 0, 0, 0],
